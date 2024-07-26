@@ -7,7 +7,8 @@ const App = () => {
   const [weather, setWeather] = useState({ temperature: 0, condition: '' });
   useEffect(() => {
     const weatherData = { temperature: 25, conditions: "Sunny" }
-    setWeather(weatherData)
+    // setWeather(weatherData)
+    setTimeout(() => setWeather(weatherData), 1000);
     console.log(setWeather);
   }, [])
 
