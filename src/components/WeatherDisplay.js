@@ -5,7 +5,8 @@ const WeatherDisplay = ({ weather }) => {
     return (
         <div className='m-5 text-center weather'>
             <p className='text-center fs-2' style={{ color: temperatureColor }}> Temperature : {weather.temperature}</p>
-            <p className='text-center fs-2'> Conditions : {weather.conditions}</p>
+            <span className='text-center fs-2'> Conditions : {weather.conditions}</span>
+            {/* <p className='text-center fs-2' style={{ color: temperatureColor }}> Temperature : {weather.temperature}</p> */}
         </div>
     )
 }
