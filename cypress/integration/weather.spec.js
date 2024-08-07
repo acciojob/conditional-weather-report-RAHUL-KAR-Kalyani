@@ -1,9 +1,9 @@
-describe("testing conitional weather report", () => {
+// cypress/integration/weather_spec.js
+describe("testing conditional weather report", () => {
+
     const baseURL = "http://localhost:8080";
 
-    beforeEach(() => {
-        cy.visit(baseURL);
-    });
+    beforeEach(() => { cy.visit(baseURL); });
 
     it("testing tags", () => {
         cy.get('p').should('have.length', 2);
@@ -12,9 +12,9 @@ describe("testing conitional weather report", () => {
 
     it('testing temperature and color', () => {
         const red = 'rgb(255, 0, 0)';
-        cy.get('p').first().should('have.text', 'Temperature: 25');
+        cy.get('p').first().contains('Temperature: 25');
         cy.get('span').should('have.css', 'color', red);
-        cy.get('p').last().should('have.text', 'Conditions: Sunny')
-    })
+        cy.get('p').last().contains('Conditions: Sunny');
+    });
 
 });

@@ -1,14 +1,19 @@
-import React from 'react'
+// WeatherDisplay.js
+import React from 'react';
 
 const WeatherDisplay = ({ weather }) => {
-    const temperatureColor = weather.temperature > 20 ? 'red' : 'blue'
+    const { temperature, conditions } = weather;
+
+    const temperatureStyle = {
+        color: temperature > 20 ? 'red' : 'blue'
+    };
+
     return (
-        <div className='m-5 text-center weather'>
-            <p className='text-center fs-2' style={{ color: temperatureColor }}>Temperature : {weather.temperature}</p>
-            <span style={{color:"red"}}></span>
-            <p className='text-center fs-2'> Conditions : {weather.conditions}</p>
+        <div>
+            <p>Temperature: <span style={temperatureStyle}>{temperature}</span></p>
+            <p>Conditions: {conditions}</p>
         </div>
-    )
+    );
 }
 
 export default WeatherDisplay;
